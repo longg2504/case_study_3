@@ -19,7 +19,7 @@ public class UserDAO extends DBContext {
     private static final String SELECT_USER_EMAIL = "select * from user where user_email = ?";
     private static final String INSERT_USER = "insert into `user` (user_name, user_email, user_pass, isAdmin) values(?,?,?,?);";
     private static final String SELECT_USER = "select * from user";
-    private static final String UPDATE_ISADMIN = "update user set isAdmin= ? where id = ?";
+    private static final String UPDATE_IS_ADMIN = "update user set isAdmin= ? where id = ?";
 
     public User checkUser(String user_email, String user_pass) throws Exception {
         conn = new DBContext().getConnection();
@@ -80,7 +80,7 @@ public class UserDAO extends DBContext {
 
     public void setAdmin(int id, String isAdmin) throws Exception {
         conn = new DBContext().getConnection();
-        ps = conn.prepareStatement(UPDATE_ISADMIN);
+        ps = conn.prepareStatement(UPDATE_IS_ADMIN);
         ps.setInt(2, id);
         ps.setString(1, isAdmin.toUpperCase());
     }
