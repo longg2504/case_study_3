@@ -9,7 +9,7 @@ public class DBContext {
     private String jdbcUsername = "root";
     private String jdbcPassword = "longg250499";
 
-    public Connection getConnection() throws Exception {
+    public Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
