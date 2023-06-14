@@ -5,9 +5,12 @@ import model.Category;
 import model.Product;
 import model.ProductSize;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,20 +139,12 @@ public class ProductDAO extends DBContext {
             }
         } catch (Exception e) {
             e.printStackTrace();
+
         }
         return null;
     }
 
-    public void insertCategory(String name) {
-        String sql = " insert into category (category_name) values(?);";
-        try {
-            conn = new DBContext().getConnection();
-            pre = conn.prepareStatement(sql);
-            pre.setString(1, name);
-            pre.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public Product findById(int idProduct) {
+        return null;
     }
-
 }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBContext {
     private String jdbcURL = "jdbc:mysql://localhost:3306/shop_case_study?allowPublicKeyRetrieval=true&useSSL=false";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "longg250499";
+    private String jdbcPassword = "123456";
 
     public Connection getConnection() {
         Connection connection = null;
@@ -15,10 +15,8 @@ public class DBContext {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return connection;

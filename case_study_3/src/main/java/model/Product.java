@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
-    private int id ;
-
-    private Category category;
-
+    private int id;
     private String name;
     private double price;
     private String describle;
@@ -16,19 +13,24 @@ public class Product {
 
     private List<ProductSize> productSizes= new ArrayList<>();
 
+
+    private Category category;
+
     public Product() {
 
     }
 
-    public Product(int id,Category category ,String name, double price, String describle, int quantity, String image ) {
-        this.id = id;
-        this.category = category;
+
+
+    public Product(String name, double price, String describle, int quantity, String image, Category category) {
         this.name = name;
         this.price = price;
         this.describle = describle;
         this.quantity = quantity;
         this.image = image;
+        this.category = category;
     }
+
     public Product(int id ,String name, double price, String describle, int quantity, String image,Category category ) {
         this.id = id;
         this.category = category;
